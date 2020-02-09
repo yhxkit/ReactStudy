@@ -18,7 +18,7 @@ class Start extends Component {
         return (
             // jsx 가 들어가는 곳. js는 {} 리터럴로 표현
             <div>
-                <h3>Chapter 1) <strong>Start.js</strong> </h3>
+                <h3>Chapter 1-1) <strong>Start.js</strong> </h3>
                 <br/>
                 <input value='Hello React'/>
                 <p>위의 input은 state 변경이 되지 않으므로 편집되지 않는다</p>
