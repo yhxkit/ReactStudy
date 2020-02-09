@@ -20,10 +20,10 @@
 - render(){} : 컴포넌트의 생김새를 정의
 - 조건부 렌더링 : if else 가 아닌 삼항연산자 사용 / 조건 && YES
 
-[연습해보기](https://github.com/yhxkit/ReactStudy/tree/master/src/ex01)
+[연습해보기- state/props/style/카운터 만들기](https://github.com/yhxkit/ReactStudy/tree/master/src/ex01)
 
 ## Chapter 1 
 
 
 
-[연습해보기](https://github.com/yhxkit/ReactStudy/tree/master/src/ex200208)
+[연습해보기- map/concat](https://github.com/yhxkit/ReactStudy/tree/master/src/ex200208)
