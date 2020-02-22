@@ -20,7 +20,13 @@ class App extends Component {
     });
   };
 
-  isSafe = (username, password) => {
+  isSafe = e => {
+    this.handleChange(e);
+
+    const { username, password } = this.state;
+
+    console.log(password);
+
     if (password.length > 4 && !password.includes(username)) {
       this.setState({
         disabled: false
@@ -48,8 +54,8 @@ class App extends Component {
             type="password"
             value={this.state.password}
             onChange={e => {
-              this.handleChange(e);
-              this.isSafe(this.state.username, this.state.password);
+              // this.handleChange(e);
+              this.isSafe(e);
             }}
           ></input>
           <button type="submit" disabled={this.state.disabled}>

@@ -1,0 +1,61 @@
+@import "./styles/util.scss"; //이렇게 상대경로로 하면 나중에 복잡한 구조의 프로젝트가 되었을때 사용하기 힘들기 떄문에 webpack 파일을 사용한다
+// yarn eject 명령어를 사용해서 webpack 파일을 꺼내게 되고, 한번 꺼내면 다시 집어넣을수없게 된다
+// 그래서 git에 commit 안하면 이 명령어가 먹히지 않음...
+
+// // 변수 사용하기 // 이부분을 utils.scss로 분리한다
+// $red: #fa5252;
+// $orange: #fd7e14;
+// $yellow: #fcc419;
+// $green: #40c057;
+// $blue: #339af0;
+// $indigo: #5c7cfa;
+// $violet: #7950f2;
+// mixin 만들기 (재사용되는 스타일 블록을 함수처럼 사용 할 수 있음)
+// @mixin square($size) {
+//   $calculated: 32px * $size;
+//   width: $calculated;
+//   height: $calculated;
+// }
+
+.SassComponent {
+  display: flex;
+  .box {
+    background: red; // 일반 CSS 에선 .SassComponent .box 와 마찬가지
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &.red {
+      // .red 클래스가 .box 와 함께 사용 됐을 때
+      background: $red;
+      @include square(1);
+      //mixin 함수를 include를 이용해서 호출해서 사용하는것이 sass의 전부래
+    }
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+    &:hover {
+      // .box 에 마우스 올렸을 때
+      background: black;
+    }
+  }
+}
