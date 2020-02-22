@@ -1,4 +1,5 @@
-@import "./styles/util.scss"; //이렇게 상대경로로 하면 나중에 복잡한 구조의 프로젝트가 되었을때 사용하기 힘들기 떄문에 webpack 파일을 사용한다
+@import "util.scss"; //prependData로 얘도 지우기
+// @import "./styles/util.scss"; //이렇게 상대경로로 하면 나중에 복잡한 구조의 프로젝트가 되었을때 사용하기 힘들기 떄문에 webpack 파일을 사용한다
 // yarn eject 명령어를 사용해서 webpack 파일을 꺼내게 되고, 한번 꺼내면 다시 집어넣을수없게 된다
 // 그래서 git에 commit 안하면 이 명령어가 먹히지 않음...
 
