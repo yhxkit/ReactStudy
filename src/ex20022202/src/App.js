@@ -6,13 +6,19 @@
 // sass-loader는 yarn add node-sass 로 추가해줌...
 
 import React, { Component } from "react";
-import "./App.css";
-
-import SassComponent from "./SassComponent";
+import Button from "./components/Button/Button";
+// import "./App.css";
+// import SassComponent from "./SassComponent";
 
 class App extends Component {
   render() {
-    return <SassComponent />;
+    return (
+      <div>
+        <Button text="로그인 버튼"></Button>
+        <br />
+        <Button text="회원가입 버튼"></Button>
+      </div>
+    );
   }
 }
 
