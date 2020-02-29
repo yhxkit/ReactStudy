@@ -35,6 +35,7 @@ class App extends Component {
   handleInsert = () => {
     this.setState(
       produce(draft => {
+        console.log(draft);
         draft.todos.push({
           id: ++this.id,
           text: this.state.input,
@@ -65,6 +66,7 @@ class App extends Component {
   handleToggle = id => {
     this.setState(
       produce(draft => {
+        console.log(draft);
         const todo = draft.todos.find(todo => todo.id === id);
         todo.done = !todo.done;
       })
@@ -82,6 +84,7 @@ class App extends Component {
   handleRemove = id => {
     this.setState(
       produce(draft => {
+        console.log(id);
         const index = draft.todos.findIndex(todo => todo.id === id);
         draft.todos.splice(index, 1); // splice는 불변성 유지해주지 않음
       })

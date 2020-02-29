@@ -20,17 +20,14 @@ class App extends Component {
     });
   };
 
-  isSafe = e => {
-    this.handleChange(e);
+  isSafe = (un, pw) => {
+    console.log(un);
+    console.log(pw);
 
-    const { username, password } = this.state;
-
-    console.log(password);
-
-    if (password.length > 4 && !password.includes(username)) {
-      this.setState({
-        disabled: false
-      });
+    if (pw.length >= 6 && !pw.includes(un)) {
+      return true;
+    } else {
+      return false;
     }
   };
 
@@ -52,13 +49,16 @@ class App extends Component {
           <input
             name="password"
             type="password"
-            value={this.state.password}
             onChange={e => {
-              // this.handleChange(e);
-              this.isSafe(e);
+              this.handleChange(e);
             }}
+            value={this.state.password}
           ></input>
-          <button type="submit" disabled={this.state.disabled}>
+          <button
+            type="submit"
+            disabled={!this.isSafe(this.state.username, this.state.password)}
+            //버튼에 isSafe를 달아서 바로 실행하도록 () 해주면 setState가 밀리지 않는다!
+          >
             Login
           </button>
         </form>

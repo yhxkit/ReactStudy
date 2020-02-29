@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./TodoItem.css";
 
 class TodoItem extends Component {
-  sshouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (this.props.todo !== nextProps.todo) {
       return true;
     } else return false;
