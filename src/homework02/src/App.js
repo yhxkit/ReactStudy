@@ -13,23 +13,42 @@ class App extends Component {
 
   id = 0;
 
+  // type = {
+  //   typename: "ALARM",
+  //   count: 1,
+  //   countStr: "1번의 알람을 설정합니다",
+  //   gap: 1,
+  //   max: 3,
+  //   min: 1
+  // };
+
   type = {
-    typename: "Alarm",
-    count: 1,
-    countStr: "1번의 알람을 설정합니다",
+    typename: "SONG",
+    count: 0,
+    countStr: "",
     gap: 1,
-    max: 3,
-    min: 1
+    max: 5,
+    min: 0
   };
 
-  //   type = {
-  //     typename: "SONG",
-  //     grade: 0,
-  //     gradeStr: "",
-  //     gap: 1,
-  //     max: 5,
-  // 	min: 0
-  //   };
+  getStarStr = count => {
+    return "★".repeat(count);
+  };
+  getAlarmStr = count => {
+    return count + "번의 알람을 설정합니다";
+  };
+  setCountStr = todo => {
+    switch (todo.type.typename) {
+      case "SONG":
+        todo.type.countStr = this.getStarStr(todo.type.count);
+        break;
+      case "ALARM":
+        todo.type.countStr = this.getAlarmStr(todo.type.count);
+        break;
+      default:
+        break;
+    }
+  };
 
   handleCreate = text => {
     this.setState(
@@ -70,11 +89,7 @@ class App extends Component {
           todo.type.count + todo.type.gap > todo.type.max
             ? todo.type.max
             : todo.type.count + todo.type.gap;
-        if (todo.type.typename === "SONG") {
-          todo.type.countStr = "★".repeat(todo.type.count);
-        } else {
-          todo.type.countStr = todo.type.count + "번의 알람을 설정합니다";
-        }
+        this.setCountStr(todo);
       })
     );
   };
@@ -87,11 +102,7 @@ class App extends Component {
           todo.type.count - todo.type.gap < todo.type.min
             ? todo.type.min
             : todo.type.count - todo.type.gap;
-        if (todo.type.typename === "SONG") {
-          todo.type.countStr = "★".repeat(todo.type.count);
-        } else {
-          todo.type.countStr = todo.type.count + "번의 알람을 설정합니다";
-        }
+        this.setCountStr(todo);
       })
     );
   };
