@@ -5,7 +5,6 @@ import "./App.css";
 class App extends Component {
   state = {
     data: null,
-    //date: "",
     fortune: null
   };
 
@@ -67,7 +66,6 @@ class App extends Component {
         >
           <input
             type="date"
-            // value={this.state.date}
             onChange={this.handleChange}
             placeholder="yyyy-mm-dd"
           ></input>
