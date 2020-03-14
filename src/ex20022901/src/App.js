@@ -1,8 +1,9 @@
 import React from "react";
 
+import { Switch, Route, Link } from "react-router-dom";
 import Main from "./Main";
 import Sub from "./Sub";
-import { Switch, Route, Link } from "react-router-dom";
+
 import Profiles from "./Profiles";
 
 const App = () => {

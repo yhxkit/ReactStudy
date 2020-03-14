@@ -11,6 +11,7 @@ const profileData = {
   }
 };
 const Profile = ({ match }) => {
+  //파라미터일때는 match를 사용한다고 함
   const { username } = match.params;
   const profile = profileData[username];
 

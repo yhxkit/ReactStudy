@@ -77,3 +77,37 @@ SASS : css를 효율적으로 관리하고 사용해보자
 [연습해보기 - promise/axios](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20022203)
 
 ---
+
+**4주차**
+
+## Chapter 7
+
+[연습해보기 - async/await](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20022900) : football match
+
+## Chapter 8
+
+[리액트라우터](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20022901)
+
+---
+
+**5주차**
+
+## Chapter 9
+
+[리덕스](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20030701)
+
+---
+
+**6주차**
+
+## Chapter 10
+
+[Middleware](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20031401) : Redux-Thunk
+
+## Chapter 11
+
+[로그인/가입 화면](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20031402)
+
+## Chapter 12
+
+[Hooks](https://github.com/yhxkit/ReactStudy/tree/master/src/ex20031403)
