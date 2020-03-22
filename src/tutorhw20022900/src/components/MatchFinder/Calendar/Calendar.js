@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactCalendar from "react-calendar";
 import "./Calendar.scss";
+
+import dateFormatter from "../../../utils/dateFormatter";
+
 class Calendar extends Component {
   state = {
     date: null
@@ -11,8 +14,17 @@ class Calendar extends Component {
     });
   };
   handleSubmit = e => {
+    // e.preventDefault();
+    // this.props.setRange(this.state.date);
+
     e.preventDefault();
-    this.props.setRange(this.state.date);
+
+    const { date } = this.state;
+    const from = dateFormatter(date[0]);
+    const to = dateFormatter(date[1]);
+    const { history, match } = this.props;
+
+    history.push(`${match.url}?from=${from}&to=${to}`);
   };
   render() {
     return (

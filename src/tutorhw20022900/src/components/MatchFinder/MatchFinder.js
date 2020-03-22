@@ -4,12 +4,17 @@ import League from "./League";
 
 class MatchFinder extends Component {
   render() {
-    const { setRange, setLeagueId, leagueId } = this.props;
+    const { leagueId, match, location, history } = this.props;
 
     return (
       <div>
-        <League setLeagueId={setLeagueId} leagueId={leagueId} />
-        <Calendar setRange={setRange} />
+        <League
+          leagueId={leagueId}
+          match={match}
+          history={history}
+          location={location}
+        />
+        <Calendar match={match} history={history} location={location} />
       </div>
     );
   }
