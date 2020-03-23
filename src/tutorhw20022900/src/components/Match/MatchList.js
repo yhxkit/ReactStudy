@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Match from "./Match";
-import leagueIdMapper from "../../utils/leagueIdMapper";
+
+import qs from "qs";
 
 class MatchList extends Component {
   state = {
     loading: false,
     data: null
   };
-  getData = async () => {
+  getData = async (range, leagueId) => {
     try {
       this.setState({
         loading: true
       });
-
-      const { from, to } = this.props.range;
-      const { leagueId } = this.props;
+      const { from, to } = range;
       const extraQuery = `&from=${from}&to=${to}&league_id=${leagueId}`;
 
       const response = await axios.get(
@@ -33,7 +32,10 @@ class MatchList extends Component {
     });
   };
   componentDidMount() {
-    this.getData();
+    this.getData(
+      qs.parse(this.props.location.search.substr(1)),
+      this.props.leagueId
+    );
   }
 
   componentDidUpdate(preProps, preState) {
@@ -43,12 +45,16 @@ class MatchList extends Component {
       this.props.range !== preProps.range ||
       this.props.leagueId !== preProps.leagueId
     ) {
-      this.getData();
+      this.getData(
+        qs.parse(this.props.location.search.substr(1)),
+        this.props.leagueId
+      );
     }
   }
 
   render() {
     const { loading, data } = this.state;
+
     return (
       <div>
         {loading && (

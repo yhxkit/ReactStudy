@@ -1,9 +1,4 @@
 import React, { Component } from "react";
-// import MatchTemplate from "./MatchTemplate/MatchTemplate";
-// import MatchFinder from "./MatchFinder";
-// import Match from "./Match";
-// import dateFormatter from "../utils/dateFormatter";
-
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import MatchPage from "../pages/MatchPage";
