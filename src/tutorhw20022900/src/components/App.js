@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-
 import MatchPage from "../pages/MatchPage";
-
 import Redirection from "../common/Redirection";
 
 class App extends Component {
