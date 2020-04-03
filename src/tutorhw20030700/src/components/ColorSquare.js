@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./ColorSquare.css";
 
-const colors = ["#bfcd7e", "#7E57C2", "#EA80FC", "#00BCD4"];
+//const colors = ["#bfcd7e", "#7E57C2", "#EA80FC", "#00BCD4"];
 
 class Color extends Component {
   render() {
@@ -23,7 +23,7 @@ class Color extends Component {
 
 class ColorSquare extends Component {
   render() {
-    const { number, selected, changeColor } = this.props;
+    const { colors, number, selected, changeColor } = this.props;
     const size = {
       width: 200 + 10 * number,
       height: 200 + 10 * number

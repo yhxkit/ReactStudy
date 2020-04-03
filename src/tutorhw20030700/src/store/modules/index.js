@@ -3,9 +3,11 @@ import { combineReducers } from "redux"; //리듀서를 합쳐주는 함수를 �
 
 import counter from "./counter";
 import colorList from "./colorList";
+import colorInput from "./colorInput";
 
 export default combineReducers({
   //여기서 합쳐줄 리듀서들작성
   counter,
-  colorList
+  colorList,
+  colorInput
 });

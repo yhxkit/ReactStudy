@@ -3,7 +3,7 @@ import "./ColorList.css";
 
 class ColorList extends Component {
   render() {
-    const { input, list, changeInput, update, remove, insert } = this.props;
+    const { insert, remove, input, changeInput, list } = this.props;
 
     return (
       <div>
@@ -14,12 +14,8 @@ class ColorList extends Component {
             insert(input);
           }}
         >
-          <input
-            onChange={str => changeInput(str)}
-            placeholder="원하는 색을 입력하세요"
-          />
+          <input onChange={str => changeInput(str)} placeholder="입력하세요" />
         </form>
-
         <div>
           <ul>
             {list.map(item => {

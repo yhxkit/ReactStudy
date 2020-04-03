@@ -4,13 +4,35 @@ import { connect } from "react-redux";
 import { changeColor } from "../store/modules/counter";
 import ColorSquare from "../components/ColorSquare";
 
-import ColorList from "../components/ColorList";
+import * as colorInputActions from "../store/modules/colorInput";
+import ColorInput from "../components/ColorInput";
 
 class ColorSquareContainer extends Component {
   render() {
-    const { number, color, changeColor } = this.props;
+    const {
+      number,
+      color,
+      changeColor,
+      input,
+      changeInput,
+      update,
+      colors
+    } = this.props;
     return (
-      <ColorSquare number={number} selected={color} changeColor={changeColor} />
+      <div>
+        <ColorSquare
+          number={number}
+          selected={color}
+          changeColor={changeColor}
+          colors={colors}
+        />
+        <ColorInput
+          color={color}
+          input={input}
+          changeInput={changeInput}
+          update={update}
+        />
+      </div>
     );
   }
 }
@@ -22,11 +44,17 @@ class ColorSquareContainer extends Component {
 // });
 const mapStateToProps = state => ({
   number: state.counter.number,
-  color: state.counter.color
+  color: state.counter.color,
+
+  input: state.colorInput.input,
+  colors: state.colorInput.colors
 });
 
 const mapDispatchToProps = dispatch => ({
-  changeColor: color => dispatch(changeColor(color))
+  changeColor: color => dispatch(changeColor(color)),
+
+  changeInput: el => dispatch(colorInputActions.changeInput(el)),
+  update: (color, input) => dispatch(colorInputActions.update(color, input))
 });
 
 export default connect(

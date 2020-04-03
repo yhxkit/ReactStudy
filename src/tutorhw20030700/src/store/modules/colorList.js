@@ -27,7 +27,8 @@ const colorList = handleActions(
     }),
     [INSERT]: (state = initialState, action) => ({
       ...state,
-      list: state.list.concat(action.payload)
+      list: state.list.concat(action.payload),
+      input: ""
     }),
     [REMOVE]: (state = initialState, action) => ({
       ...state,
