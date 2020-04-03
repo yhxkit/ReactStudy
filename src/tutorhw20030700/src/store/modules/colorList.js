@@ -21,17 +21,20 @@ const initialState = {
 
 const colorList = handleActions(
   {
-    [CHANGE_INPUT]: (state, action) => ({
+    [CHANGE_INPUT]: (state = initialState, action) => ({
       ...state,
-      input: state.input + action.payload
+      input: action.payload.target.value
     }),
-    [INSERT]: (state, action) => ({
+    [INSERT]: (state = initialState, action) => ({
+      ...state,
       list: state.list.concat(action.payload)
     }),
-    [REMOVE]: (state, action) => ({
+    [REMOVE]: (state = initialState, action) => ({
+      ...state,
       list: state.list.filter(item => item.id !== action.payload)
     }),
-    [UPDATE]: (state, action) => ({
+    [UPDATE]: (state = initialState, action) => ({
+      ...state,
       list: state.list.map(item =>
         item.id === action.payload.id ? action.payload : item
       )

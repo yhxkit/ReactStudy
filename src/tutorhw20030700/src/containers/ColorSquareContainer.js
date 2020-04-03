@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { changeColor } from "../store/modules/counter";
 import ColorSquare from "../components/ColorSquare";
 
+import ColorList from "../components/ColorList";
+
 class ColorSquareContainer extends Component {
   render() {
     const { number, color, changeColor } = this.props;

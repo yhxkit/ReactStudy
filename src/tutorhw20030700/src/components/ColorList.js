@@ -7,12 +7,31 @@ class ColorList extends Component {
 
     return (
       <div>
-        <form className="ColorList">
+        <form
+          className="ColorList"
+          onSubmit={e => {
+            e.preventDefault();
+            insert(input);
+          }}
+        >
           <input
-            onChange={() => changeInput(1)}
+            onChange={str => changeInput(str)}
             placeholder="원하는 색을 입력하세요"
           />
         </form>
+
+        <div>
+          <ul>
+            {list.map(item => {
+              return (
+                <li key={item.id}>
+                  {item.color}
+                  <button onClick={() => remove(item.id)}>삭제</button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }
